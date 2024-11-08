@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebración con Confeti y Sonido</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <p>Haz clic para iniciar el confeti y el sonido</p>
+
+    <!-- Añadimos el archivo de sonido -->
+    <audio id="festejoAudio" src="magic-spell-impact-sound-effect-236815.mp3" preload="auto"></audio>
+
+    <!-- Botón para iniciar el confeti y el sonido -->
+    <button id="startButton">Iniciar Celebración</button>
+
+    <script>
+        // Reproducir sonido de festejo
+        const playSound = () => {
+            const audio = document.getElementById("festejoAudio");
+            audio.play();
+        };
+
+        // Función para lanzar confeti desde la esquina izquierda
+        const confettiFromLeftCorner = () => {
+            confetti({
+                particleCount: 50,
+                angle: 60,  // Ángulo en diagonal hacia el centro
+                spread: 55, // Espaciamiento de las partículas
+                origin: { x: 0, y: 1 }, // Desde la esquina inferior izquierda
+                colors: ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff'], // Colores
+            });
+        };
+
+        // Función para lanzar confeti desde la esquina derecha
+        const confettiFromRightCorner = () => {
+            confetti({
+                particleCount: 50,
+                angle: 120, // Ángulo en diagonal hacia el centro
+                spread: 55, // Espaciamiento de las partículas
+                origin: { x: 1, y: 1 }, // Desde la esquina inferior derecha
+                colors: ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff'], // Colores
+            });
+        };
+
+        // Función para lanzar confeti desde ambas puntas y reproducir sonido
+        const startConfetti = () => {
+            // Reproducir el sonido de festejo al iniciar el confeti
+            playSound();
+
+            const interval = setInterval(function() {
+                confettiFromLeftCorner();  // Confeti desde la izquierda
+                confettiFromRightCorner(); // Confeti desde la derecha
+            }, 300); // Intervalo de 300ms
+
+            // Detener confeti después de 5 segundos
+            setTimeout(function() {
+                clearInterval(interval);
+            }, 900); // 5000ms = 5 segundos
+        };
+
+        // Evento click del botón para iniciar la celebración
+        const startButton = document.getElementById('startButton');
+        startButton.addEventListener('click', function() {
+            startConfetti();
+            startButton.style.display = 'none'; // Ocultar el botón después de hacer clic
+        });
+    </script>
+</body>
+</html>
+

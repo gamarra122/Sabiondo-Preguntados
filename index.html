@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Preguntas</title>
+    <link rel="stylesheet" href="styles/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <audio id="background-music" autoplay loop>
+        <source src="stranger-things-124008.mp3" type="audio/mpeg">
+    </audio>
+    <button id="toggle-music-btn" onclick="toggleMusic()">🔊</button>
+    <audio id="correct-sound">
+        <source src="going-to-the-next-level-114480.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+    <audio id="incorrect-sound">
+        <source src="ui-message-243464.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+    <audio id="festejoAudio">
+        <source src="magic-spell-impact-sound-effect-236815.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+</head>
+<body>
+    <div class="contenedor-imagenes">
+        <img src="1animacion .gif" alt="Imagen 1">
+        <img src="2animacion .gif" alt="Imagen 2">
+        <img src="3animacion .gif" alt="Imagen 3">
+        <img src="4animacion .gif" alt="Imagen 4">
+    </div>
+   <div id="button-reglas"><a href="reglas.html" class="boton-reglas">REGLAS</a></div>
+   <div id="button-creditos"><a href="creditos.html" class="boton-creditos">CREDITOS</a></div>
+ 
+    <div id="header-image">
+        <a href="https://ispetyp-cha.infd.edu.ar/sitio/"> 
+        <img src="TSITI-LOGO.png"  alt="Encabezado del Juego" />
+        
+        </a>
+    </div>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+    <script src="models/modelo.js"></script>
+    <script src="src/menu.js"></script>
+    <script src="src/juego.js"></script>
+    <script src="src/historico.js"></script>
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            
+            <source src="Geometric colorful Background.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento video.
+        </video>
+      </div>
+    
+</body>
+</html>

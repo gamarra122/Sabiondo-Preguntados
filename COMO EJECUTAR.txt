@@ -1,0 +1,39 @@
+Cómo ejecutar el proyecto en otra computadora:
+
+Instalar Node.js y MySQL:
+
+Descarga e instala Node.js desde https://nodejs.org
+Descarga e instala MySQL desde https://dev.mysql.com/downloads/
+Clonar el repositorio del proyecto:
+
+Usa Git o descarga la carpeta del proyecto y extráela.
+Instalar dependencias:
+
+Abre una terminal y navega a la carpeta del proyecto.
+Ejecuta el comando: npm install
+Configurar la base de datos MySQL en Navicat:
+
+Abre Navicat y crea una nueva conexión llamada "conexion" en el puerto 3306.
+Host: localhost
+Usuario: root
+Contraseña: [Tu contraseña de MySQL]
+Crear la base de datos y la tabla:
+
+Crea una nueva base de datos llamada "database".
+Dentro de esta base de datos, crea una tabla llamada "Usuarios" con las siguientes columnas:
+Nickname (VARCHAR, longitud: 50)
+Ranking (INT)
+Modificar los detalles de conexión en el código:
+
+Abre el archivo donde está definido tu servidor Express.
+Actualiza la configuración de conexión en mysql.createConnection() con tus credenciales de MySQL, si es necesario.
+Iniciar el servidor Express:
+
+Ejecuta el comando: node [nombre-del-archivo-del-servidor].js
+Probar los endpoints de la API:
+
+POST /guardar-puntaje: Guarda un puntaje en la base de datos enviando datos JSON que contengan nickname y ranking.
+GET /historico: Obtén los 10 mejores usuarios por ranking.
+Acceder al servidor:
+
+El servidor estará corriendo en http://localhost:3000. Puedes usar herramientas como Postman o cualquier frontend para interactuar con los endpoints.
